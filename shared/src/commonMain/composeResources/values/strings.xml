@@ -1,0 +1,236 @@
+<resources>
+    <string name="app_name">Wapi Rides</string>
+
+    <!-- Brand & Welcome -->
+    <string name="welcome_headline">You\'re going there anyway.\nWhy go alone?</string>
+    <string name="welcome_subheadline">Share the journey. Share the cost.</string>
+    <string name="cta_create_account">Create Account</string>
+    <string name="cta_sign_in">Sign In</string>
+    <string name="brand_logo_slot_desc">Wapi brand mark</string>
+
+    <!-- Authentication: Sign In -->
+    <string name="sign_in_title">Welcome back</string>
+    <string name="sign_in_subtitle">Sign in to coordinate your next shared journey across Kenya.</string>
+    <string name="label_email">Email address</string>
+    <string name="placeholder_email">name@example.com</string>
+    <string name="label_password">Password</string>
+    <string name="placeholder_password">Enter your password</string>
+    <string name="action_forgot_password">Forgot password?</string>
+    <string name="prompt_no_account">Don\'t have an account?</string>
+
+    <!-- Authentication: Create Account -->
+    <string name="create_account_title">Create your account</string>
+    <string name="create_account_subtitle">Join the trusted community sharing intercity and daily commutes.</string>
+    <string name="label_full_name">Full name</string>
+    <string name="placeholder_full_name">e.g. James Mwangi</string>
+    <string name="label_phone">Kenyan phone number</string>
+    <string name="placeholder_phone">e.g. +254 712 345 678</string>
+    <string name="label_confirm_password">Confirm password</string>
+    <string name="placeholder_confirm_password">Re-enter your password</string>
+    <string name="prompt_have_account">Already have an account?</string>
+
+    <!-- Authentication: Forgot Password -->
+    <string name="forgot_password_title">Reset your password</string>
+    <string name="forgot_password_subtitle">Enter the email associated with your Wapi account and we\'ll send a recovery link.</string>
+    <string name="cta_send_reset_link">Send Recovery Link</string>
+    <string name="cta_cancel">Cancel</string>
+    <string name="cta_done">Done</string>
+    <string name="reset_password_sent_title">Check your email</string>
+    <string name="reset_password_sent_body">If an account exists for that email address, a password recovery link has been sent.</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_find">Find</string>
+    <string name="nav_trips">Trips</string>
+    <string name="nav_messages">Messages</string>
+    <string name="nav_profile">Profile</string>
+    <string name="action_back">Navigate back</string>
+
+    <!-- Home -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="home_tagline">Where are you heading today?</string>
+    <string name="action_find_a_ride">Find a Ride</string>
+    <string name="action_find_a_ride_desc">Book an available seat on your route</string>
+    <string name="action_offer_a_ride">Offer a Ride</string>
+    <string name="action_offer_a_ride_desc">Share empty seats and split fuel costs</string>
+    <string name="section_upcoming_trip">Upcoming Trip</string>
+    <string name="empty_upcoming_trip">Your next journey will appear here.</string>
+    <string name="empty_upcoming_trip_hint">When you book a seat or publish a journey, live departure details will stay pinned here.</string>
+    <string name="section_popular_routes">Popular Corridors</string>
+    <string name="popular_routes_placeholder_title">Curated corridors launching soon</string>
+    <string name="popular_routes_placeholder_desc">Nairobi — Nakuru, Nairobi — Naivasha, Eldoret — Kisumu, and Mombasa — Diani seat listings will appear here once marketplace matching opens.</string>
+
+    <!-- Find Ride -->
+    <string name="find_ride_title">Find a Ride</string>
+    <string name="find_ride_subtitle">Search upcoming journeys offered by verified drivers heading your way.</string>
+    <string name="label_from">From</string>
+    <string name="placeholder_from">Departure town or landmark (e.g. Nairobi)</string>
+    <string name="label_to">To</string>
+    <string name="placeholder_to">Destination town or landmark (e.g. Nakuru)</string>
+    <string name="label_date">Date</string>
+    <string name="placeholder_date">Select travel date</string>
+    <string name="label_time">Preferred time (optional)</string>
+    <string name="placeholder_time">Any time</string>
+    <string name="cta_find_rides">Find Rides</string>
+    <string name="find_ride_preview_notice">Ride search marketplace backend is coming in the next phase.</string>
+    <string name="find_ride_results_header">Available Rides</string>
+    <string name="find_ride_empty_title">No rides found for this route</string>
+    <string name="find_ride_empty_body">No published rides match your route and travel date yet. Try adjusting your search or offer a ride if you\'re driving this route.</string>
+    <string name="find_ride_prompt_title">Search shared journeys across Kenya</string>
+    <string name="find_ride_prompt_body">Enter your departure location, destination, and travel date above to discover available seats.</string>
+
+    <!-- Trip Details & Seat Request (Phases 4.3 & 4.4) -->
+    <string name="trip_details_title">Trip Details</string>
+    <string name="trip_details_subtitle">Review route, schedule, and driver details for this shared journey.</string>
+    <string name="trip_details_section_route">ROUTE &amp; SCHEDULE</string>
+    <string name="trip_details_section_seats">SEATS &amp; CONTRIBUTION</string>
+    <string name="trip_details_section_driver">DRIVER COMMUNITY PROFILE</string>
+    <string name="trip_details_section_notes">TRIP NOTES</string>
+    <string name="trip_details_section_request">REQUEST A SEAT</string>
+    <string name="trip_details_section_your_ride">YOUR RIDE</string>
+    <string name="trip_details_your_ride_title">Your ride</string>
+    <string name="trip_details_your_ride_body">You are the driver for this journey. Manage incoming passenger seat requests from here or the Trips tab.</string>
+    <string name="trip_details_cta_manage_ride">Manage Ride</string>
+    <string name="trip_details_cta_request_seat">Request Seat</string>
+    <string name="trip_details_cta_ride_full">Ride Full</string>
+    <string name="trip_details_cta_cancel_request">Cancel Request</string>
+    <string name="trip_details_label_seats_to_request">Number of seats</string>
+    <string name="trip_details_label_pickup_stop">Pickup stop (optional)</string>
+    <string name="trip_details_label_dropoff_stop">Drop-off stop (optional)</string>
+    <string name="trip_details_label_passenger_message">Message to driver (optional)</string>
+    <string name="trip_details_placeholder_passenger_message">e.g. Can I be picked up near Westlands?</string>
+    <string name="request_state_pending_title">Waiting for driver</string>
+    <string name="request_state_pending_subtitle">Waiting for the driver to respond.</string>
+    <string name="request_state_sent_banner">Request sent. Waiting for the driver to respond.</string>
+    <string name="request_state_accepted_title">Seat confirmed</string>
+    <string name="request_state_declined_title">Request declined</string>
+    <string name="request_state_cancelled_title">Request cancelled</string>
+    <string name="request_state_expired_title">Request expired</string>
+
+    <!-- Trip Lifecycle & Booking Controls (Phase 4.4) -->
+    <string name="lifecycle_ride_ready_title">Ride ready</string>
+    <string name="lifecycle_ride_ready_body">Confirmed passengers are ready for departure. Start the trip when your journey begins.</string>
+    <string name="lifecycle_trip_in_progress_title">Trip in progress</string>
+    <string name="lifecycle_trip_in_progress_driver_body">Your journey is currently underway. Complete the trip once you arrive at the destination.</string>
+    <string name="lifecycle_trip_in_progress_passenger_body">You are currently on the road with your driver.</string>
+    <string name="lifecycle_trip_completed_title">Trip completed</string>
+    <string name="lifecycle_trip_completed_body">This shared journey has been completed.</string>
+    <string name="lifecycle_booking_confirmed_title">Confirmed</string>
+    <string name="lifecycle_booking_cancelled_title">Booking cancelled</string>
+    <string name="lifecycle_booking_cancelled_body">This booking was cancelled and reserved seats were returned to the ride.</string>
+    <string name="lifecycle_cta_start_trip">Start Trip</string>
+    <string name="lifecycle_cta_complete_trip">Complete Trip</string>
+    <string name="lifecycle_cta_cancel_booking">Cancel Booking</string>
+    <string name="lifecycle_cta_rate_trip">Rate your trip</string>
+    <string name="lifecycle_rate_trip_hint">Ratings open once both travellers finish the journey (coming in Phase 4.5).</string>
+    <string name="cancel_booking_dialog_title">Cancel this ride?</string>
+    <string name="cancel_booking_dialog_body">Your reserved seats will become available again.</string>
+    <string name="cancel_booking_dialog_confirm">Cancel</string>
+    <string name="cancel_booking_dialog_dismiss">Keep Booking</string>
+
+    <!-- Offer Ride -->
+    <string name="offer_ride_title">Offer a Ride</string>
+    <string name="offer_ride_subtitle">Publish your planned trip and share the journey cost with fellow travellers.</string>
+    <string name="placeholder_offer_from">Nairobi</string>
+    <string name="placeholder_offer_to">Nakuru</string>
+    <string name="placeholder_offer_date">Select departure date</string>
+    <string name="label_departure_time">Time</string>
+    <string name="placeholder_departure_time">Select departure time</string>
+    <string name="label_available_seats">Available seats</string>
+    <string name="placeholder_available_seats">e.g. 3</string>
+    <string name="label_contribution">Contribution per seat (KES, optional)</string>
+    <string name="placeholder_contribution">Leave blank or enter amount (e.g. 800)</string>
+    <string name="label_notes">Notes (optional)</string>
+    <string name="placeholder_notes">Pickup point details, luggage space, or route notes</string>
+    <string name="cta_publish_ride">Publish Ride</string>
+    <string name="offer_ride_published_banner">Your ride has been published to Wapi Rides.</string>
+
+    <!-- Trips & Driver Requests (Phases 4.3 & 4.4) -->
+    <string name="trips_title">Trips</string>
+    <string name="trips_tab_upcoming">Upcoming</string>
+    <string name="trips_tab_requests">Requests</string>
+    <string name="trips_tab_active">Active</string>
+    <string name="trips_tab_completed">Completed</string>
+    <string name="trips_tab_cancelled">Cancelled</string>
+    <string name="trips_empty_upcoming_title">No upcoming trips</string>
+    <string name="trips_empty_upcoming_body">Your scheduled rides as a passenger or driver will be listed here.</string>
+    <string name="trips_empty_requests_title">No ride requests yet</string>
+    <string name="trips_empty_requests_body">When passengers request seats on your published journeys, their requests will appear here for your approval.</string>
+    <string name="trips_empty_active_title">No active journey right now</string>
+    <string name="trips_empty_active_body">Trips currently underway will appear here for quick access.</string>
+    <string name="trips_empty_completed_title">No completed trips yet</string>
+    <string name="trips_empty_completed_body">Past shared journeys and cost summaries will be archived here.</string>
+    <string name="trips_empty_cancelled_title">No cancelled trips or bookings</string>
+    <string name="trips_empty_cancelled_body">Cancelled trips and bookings will be recorded here for your reference.</string>
+    <string name="driver_request_accept">Accept</string>
+    <string name="driver_request_decline">Decline</string>
+    <string name="driver_request_confirmed_badge">Passenger confirmed</string>
+    <string name="driver_request_declined_badge">Request declined</string>
+
+    <!-- Messages (Phase 4.7B) -->
+    <string name="messages_title">Messages</string>
+    <string name="messages_empty_title">No conversations yet</string>
+    <string name="messages_empty_body">When you coordinate pickup points or seat requests with drivers and co-travellers, your threads will appear here.</string>
+    <string name="messages_refresh_cta">Refresh</string>
+    <string name="chat_input_placeholder">Message…</string>
+    <string name="chat_send_cta">Send</string>
+    <string name="chat_empty_title">Start the conversation</string>
+    <string name="chat_empty_body">Coordinate pickup time, landmark details, or luggage questions with your co-traveller.</string>
+    <string name="message_driver_cta">Message Driver</string>
+    <string name="message_passenger_cta">Message Passenger</string>
+
+    <!-- Profile & Trust (Phase 4.5) -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_rating_label">Rating</string>
+    <string name="profile_ratings_count_label">Ratings</string>
+    <string name="profile_rating_placeholder">No ratings yet</string>
+    <string name="profile_completed_trips_label">Completed trips</string>
+    <string name="profile_completed_trips_placeholder">0 completed trips</string>
+    <string name="profile_section_account">Account</string>
+    <string name="profile_section_verification">Verification</string>
+    <string name="profile_section_safety">Safety</string>
+    <string name="profile_section_notifications">Notifications</string>
+    <string name="profile_section_settings">Settings</string>
+    <string name="cta_sign_out">Sign Out</string>
+    <string name="coming_soon_badge">Coming soon</string>
+
+    <!-- Ratings & Trust System (Phase 4.5) -->
+    <string name="rating_section_title">Rate your trip</string>
+    <string name="rating_rate_driver">Rate your driver</string>
+    <string name="rating_rate_passenger">Rate your passenger</string>
+    <string name="rating_review_placeholder">Share your experience (optional)</string>
+    <string name="rating_submit_cta">Submit Rating</string>
+    <string name="rating_submitted_badge">✓ You rated this trip</string>
+    <string name="rating_submitted_plain">You rated this trip</string>
+    <string name="rating_thank_you_message">Thank you for helping keep Wapi trusted.</string>
+    <string name="rating_status_rated">Rated ✓</string>
+    <string name="rating_status_not_rated">Not rated</string>
+
+    <!-- Phase 4.8B: Safety & Trust Foundation -->
+    <string name="profile_section_vehicles">Vehicles</string>
+    <string name="profile_edit_button">Edit Profile</string>
+    <string name="profile_save_button">Save Changes</string>
+    <string name="profile_cancel_button">Cancel</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_bio_placeholder">Tell the Wapi community a little about yourself…</string>
+    <string name="vehicles_screen_title">My Vehicles</string>
+    <string name="vehicles_screen_subtitle">Manage vehicles forrides you offer on Wapi.</string>
+    <string name="vehicles_add_cta">Add Vehicle</string>
+    <string name="verification_screen_title">Verification &amp; Trust</string>
+    <string name="verification_screen_subtitle">Your verified credentials and community trust status.</string>
+    <string name="safety_screen_title">Safety &amp; Emergency Contacts</string>
+    <string name="safety_screen_subtitle">Manage trusted contacts for journey sharing.</string>
+    <string name="emergency_contact_add_cta">Add Emergency Contact</string>
+    <string name="trip_share_section_title">SAFETY &amp; TRIP SHARING</string>
+    <string name="trip_share_cta">Share Trip</string>
+
+    <!-- Legacy connectivity test strings kept intact -->
+    <string name="title_wapi_test">Wapi Test</string>
+    <string name="status_initial">Android environment is working.</string>
+    <string name="status_loading">Connecting to Supabase…</string>
+    <string name="status_error_title">Supabase connection failed</string>
+    <string name="button_test">TEST BUTTON</string>
+    <string name="badge_ready">BUILD MODE VERIFIED</string>
+</resources>

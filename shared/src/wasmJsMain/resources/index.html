@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Wapi Rides</title>
+    <meta name="description" content="Wapi Rides: share journeys and costs across Kenya.">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="theme-color" content="#0B6E4F">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wapi Rides">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <style>
+        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #F8F9FA; }
+        #loading {
+            position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #07593E; background: #F8F9FA;
+            z-index: 10; pointer-events: none;
+        }
+        #loading img { width: 88px; height: 88px; border-radius: 20px; margin-bottom: 16px; }
+        #loading p { margin: 0; font-size: 15px; }
+    </style>
+    <script src="wapiApp.js" defer></script>
+</head>
+<body>
+    <div id="loading"><img src="icon-192.png" alt=""><p>Loading Wapi Rides&hellip;</p></div>
+</body>
+</html>
