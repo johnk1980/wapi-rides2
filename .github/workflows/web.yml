@@ -34,7 +34,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
-        run: gradle :shared:wasmJsBrowserDistribution --no-daemon --stacktrace
+        run: .github/scripts/run-build.sh :shared:wasmJsBrowserDistribution --no-daemon --stacktrace
 
       - name: Prepare site
         run: |
