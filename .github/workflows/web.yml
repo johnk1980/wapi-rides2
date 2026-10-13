@@ -30,6 +30,12 @@ jobs:
         with:
           gradle-version: 8.14.3
 
+      - name: Diagnose dependencies
+        continue-on-error: true
+        run: |
+          gradle :shared:dependencyInsight --dependency datetime --configuration wasmJsCompileClasspath --no-daemon > deps.log 2>&1 || true
+          grep -E 'kotlinx-datetime|-> ' deps.log | head -n 25 | while IFS= read -r line; do echo "::error title=diag::${line}"; done
+
       - name: Build web app
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
