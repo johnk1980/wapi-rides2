@@ -2,7 +2,7 @@
     <string name="app_name">Wapi Rides</string>
 
     <!-- Brand & Welcome -->
-    <string name="welcome_headline">You're going there anyway.\nWhy go alone?</string>
+    <string name="welcome_headline">You’re going there anyway.\nWhy go alone?</string>
     <string name="welcome_subheadline">Share the journey. Share the cost.</string>
     <string name="cta_create_account">Create Account</string>
     <string name="cta_sign_in">Sign In</string>
@@ -16,7 +16,7 @@
     <string name="label_password">Password</string>
     <string name="placeholder_password">Enter your password</string>
     <string name="action_forgot_password">Forgot password?</string>
-    <string name="prompt_no_account">Don't have an account?</string>
+    <string name="prompt_no_account">Don’t have an account?</string>
 
     <!-- Authentication: Create Account -->
     <string name="create_account_title">Create your account</string>
@@ -31,7 +31,7 @@
 
     <!-- Authentication: Forgot Password -->
     <string name="forgot_password_title">Reset your password</string>
-    <string name="forgot_password_subtitle">Enter the email associated with your Wapi account and we'll send a recovery link.</string>
+    <string name="forgot_password_subtitle">Enter the email associated with your Wapi account and we’ll send a recovery link.</string>
     <string name="cta_send_reset_link">Send Recovery Link</string>
     <string name="cta_cancel">Cancel</string>
     <string name="cta_done">Done</string>
@@ -77,7 +77,7 @@
     <string name="find_ride_preview_notice">Ride search marketplace backend is coming in the next phase.</string>
     <string name="find_ride_results_header">Available Rides</string>
     <string name="find_ride_empty_title">No rides found for this route</string>
-    <string name="find_ride_empty_body">No published rides match your route and travel date yet. Try adjusting your search or offer a ride if you're driving this route.</string>
+    <string name="find_ride_empty_body">No published rides match your route and travel date yet. Try adjusting your search or offer a ride if you’re driving this route.</string>
     <string name="find_ride_prompt_title">Search shared journeys across Kenya</string>
     <string name="find_ride_prompt_body">Enter your departure location, destination, and travel date above to discover available seats.</string>
 
