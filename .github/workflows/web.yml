@@ -30,17 +30,6 @@ jobs:
         with:
           gradle-version: 8.14.3
 
-      - name: Diagnose dependencies
-        continue-on-error: true
-        run: |
-          for c in wasmJsCompileClasspath wasmJsRuntimeClasspath; do
-            gradle :shared:dependencyInsight --dependency datetime --configuration $c --no-daemon > deps_$c.log 2>&1 || true
-            echo "::error title=diag-$c::$(grep -E 'kotlinx-datetime|-> |^\+--- |^\\--- ' deps_$c.log | head -n 30 | tr '\n' '|')"
-          done
-          gradle :shared:dependencies --configuration wasmJsRuntimeClasspath --no-daemon > tree.log 2>&1 || true
-          echo "::error title=diag-tree::$(grep -E 'datetime' tree.log | head -n 20 | tr '\n' '|')"
-          echo "::error title=diag-ver::$(grep -E 'kotlin-stdlib|compose.runtime:runtime|lifecycle-common' tree.log | sort -u | head -n 12 | tr '\n' '|')"
-
       - name: Build web app
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
