@@ -1,4 +1,4 @@
-name: Build and deploy web app
+name: Build web app
 
 on:
   push:
@@ -7,13 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build:
@@ -43,7 +37,17 @@ jobs:
           echo "Using $DIST"
           mkdir -p site
           cp -r "$DIST"/. site/
-          touch site/.nojekyll
+          cat > site/.htaccess <<'HT'
+          AddType application/wasm .wasm
+          <IfModule mod_deflate.c>
+            AddOutputFilterByType DEFLATE application/wasm application/javascript text/css text/html application/json
+          </IfModule>
+          <IfModule mod_headers.c>
+            <FilesMatch "\.(wasm|js|html|webmanifest)$">
+              Header set Cache-Control "no-cache"
+            </FilesMatch>
+          </IfModule>
+          HT
           ls -la site
 
       - uses: actions/upload-artifact@v4
@@ -51,21 +55,13 @@ jobs:
           name: wapi-web
           path: site
 
-      - uses: actions/configure-pages@v5
+      - name: Publish build to web-dist branch
         if: github.ref == 'refs/heads/main'
-
-      - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          path: site
-
-  deploy:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          cd site
+          git init -q -b web-dist
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Web build ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" web-dist
