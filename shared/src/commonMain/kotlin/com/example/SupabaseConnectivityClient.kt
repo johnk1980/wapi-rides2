@@ -32,13 +32,28 @@ object SupabaseConnectivityClient {
     val AUTH_REDIRECT_URL: String
         get() = authRedirectUrl()
 
+    // Tolerate the two settings being entered the wrong way round (URL in the key slot and vice versa).
+    private val configUrl: String
+        get() {
+            val url = AppConfig.SUPABASE_URL.trim()
+            val key = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+            return if (!url.startsWith("http") && key.startsWith("http")) key else url
+        }
+
+    private val configKey: String
+        get() {
+            val url = AppConfig.SUPABASE_URL.trim()
+            val key = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+            return if (!url.startsWith("http") && key.startsWith("http")) url else key
+        }
+
     private val _deepLinkError = MutableStateFlow<String?>(null)
     val deepLinkError: StateFlow<String?> = _deepLinkError.asStateFlow()
 
     val client: SupabaseClient by lazy {
         createSupabaseClient(
-            supabaseUrl = AppConfig.SUPABASE_URL.trim(),
-            supabaseKey = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+            supabaseUrl = configUrl,
+            supabaseKey = configKey
         ) {
             install(Postgrest)
             install(Auth) {
@@ -118,8 +133,8 @@ object SupabaseConnectivityClient {
     }
 
     fun isConfigured(): Boolean {
-        val url = AppConfig.SUPABASE_URL.trim()
-        val key = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+        val url = configUrl
+        val key = configKey
         return url.isNotBlank() &&
             url != "YOUR_SUPABASE_URL" &&
             key.isNotBlank() &&
@@ -127,8 +142,8 @@ object SupabaseConnectivityClient {
     }
 
     fun ensureConfigured() {
-        val url = AppConfig.SUPABASE_URL.trim()
-        val key = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+        val url = configUrl
+        val key = configKey
 
         if (url.isBlank() || url == "YOUR_SUPABASE_URL") {
             throw IllegalStateException("SUPABASE_URL secret is not configured in AppConfig.")
@@ -160,8 +175,8 @@ object SupabaseConnectivityClient {
             ?: "Unknown error"
 
         var sanitized = raw
-        val url = AppConfig.SUPABASE_URL.trim()
-        val key = AppConfig.SUPABASE_PUBLISHABLE_KEY.trim()
+        val url = configUrl
+        val key = configKey
 
         if (url.isNotEmpty() && url != "YOUR_SUPABASE_URL") {
             sanitized = sanitized.replace(url, "[REDACTED_SUPABASE_URL]", ignoreCase = true)
