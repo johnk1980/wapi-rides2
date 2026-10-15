@@ -4691,10 +4691,17 @@ class WapiAppViewModel(
                     it.copy(
                         createAccountForm = it.createAccountForm.copy(
                             isSubmitting = false,
-                            generalError = SupabaseConnectivityClient.toUserFriendlyMessage(
-                                error,
-                                "Unable to create your account right now. Please try again."
-                            )
+                            generalError = run {
+                                val fallback = "Unable to create your account right now. Please try again."
+                                val friendly = SupabaseConnectivityClient.toUserFriendlyMessage(error, fallback)
+                                Log.e("WapiAppViewModel", "Sign-up failed: ${SupabaseConnectivityClient.sanitizeErrorMessage(error)}")
+                                if (friendly == fallback) {
+                                    // Temporary diagnostic detail (secrets and host are redacted).
+                                    fallback + " [" + SupabaseConnectivityClient.sanitizeErrorMessage(error).take(220) + "]"
+                                } else {
+                                    friendly
+                                }
+                            }
                         )
                     )
                 }
