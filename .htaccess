@@ -1,0 +1,9 @@
+AddType application/wasm .wasm
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE application/wasm application/javascript text/css text/html application/json
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(wasm|js|html|webmanifest)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
