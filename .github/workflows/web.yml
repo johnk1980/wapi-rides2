@@ -37,14 +37,50 @@ jobs:
           echo "Using $DIST"
           mkdir -p site
           cp -r "$DIST"/. site/
+          sudo apt-get install -y -qq brotli
+          # Precompress (brotli + gzip) so the big wasm files download 4-5x smaller
+          for f in site/*.wasm site/wapiApp.js; do
+            brotli -q 11 -k "$f" || true
+            gzip -9 -k -f "$f"
+          done
           cat > site/.htaccess <<'HT'
           AddType application/wasm .wasm
           <IfModule mod_deflate.c>
             AddOutputFilterByType DEFLATE application/wasm application/javascript text/css text/html application/json
           </IfModule>
+          <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteCond %{HTTP:Accept-Encoding} br
+            RewriteCond %{REQUEST_FILENAME}.br -f
+            RewriteRule ^(.+\.(wasm|js))$ $1.br [L,E=ENC:br]
+            RewriteCond %{HTTP:Accept-Encoding} gzip
+            RewriteCond %{ENV:ENC} !br
+            RewriteCond %{REQUEST_FILENAME}.gz -f
+            RewriteRule ^(.+\.(wasm|js))$ $1.gz [L,E=ENC:gzip]
+          </IfModule>
+          <FilesMatch "\.wasm\.(br|gz)$">
+            ForceType application/wasm
+          </FilesMatch>
+          <FilesMatch "\.js\.(br|gz)$">
+            ForceType application/javascript
+          </FilesMatch>
           <IfModule mod_headers.c>
-            <FilesMatch "\.(wasm|js|html|webmanifest)$">
+            <FilesMatch "\.(br)$">
+              Header set Content-Encoding br
+              Header append Vary Accept-Encoding
+            </FilesMatch>
+            <FilesMatch "\.(gz)$">
+              Header set Content-Encoding gzip
+              Header append Vary Accept-Encoding
+            </FilesMatch>
+            <FilesMatch "^[0-9a-f]{20}\.wasm(\.br|\.gz)?$">
+              Header set Cache-Control "public, max-age=31536000, immutable"
+            </FilesMatch>
+            <FilesMatch "\.(html|webmanifest)$|^wapiApp\.js(\.br|\.gz)?$">
               Header set Cache-Control "no-cache"
+            </FilesMatch>
+            <FilesMatch "\.(png|ttf|cvr)$">
+              Header set Cache-Control "public, max-age=86400"
             </FilesMatch>
           </IfModule>
           HT
